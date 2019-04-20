@@ -1,7 +1,7 @@
 from pprint import pprint as print
 from pytube import YouTube
 import requests,re,os
-links = set(re.findall(r'href="/watch\?(.*?)"', requests.get('https://www.youtube.com/playlist?list=PLHuVrfp6F2wVBXJR-yDFTbwFqxPZA8x-I').text));
+links = set(re.findall(r'href="/watch\?(.*?)"', requests.get(input('playlist youtube link:')).text));
 i = 1
 for link in links:
 	link = "https://youtube.com/watch?" + link.split('&amp;')[0]
